@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "4f8a4db4-9c47-4825-9a3f-3de1aa66c77c",
+		"name": "CIBA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Step1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						},
+						{
+							"key": "login_hint",
+							"value": "{{login_hint}}",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "openid",
+							"type": "text"
+						},
+						{
+							"key": "binding_message",
+							"value": "hello",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloak-host}}/auth/realms/{{realm-name}}/protocol/openid-connect/ext/ciba/auth",
+					"host": [
+						"{{keycloak-host}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"{{realm-name}}",
+						"protocol",
+						"openid-connect",
+						"ext",
+						"ciba",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step2",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..Wfpq-KZRIq-UExh7juU4yA.i4XxM9jL8_7jLLuX6zm_ml8c4ByR2aOgFAmdJ0tI5Jqq1LpLkFB-X6EnHsuGhbQPToJDqKB068HETOxNnMz_5CSMjJWtZis6oNVfnCcF4XQHvtrp_NMAMvW54JBrekGG7dx0YZl86GIAMrM2fWcnA6usYHTkZ7elmqUF1u8KKn0KEfV2tARhOiqZbpGYbzL_XAYrzOHmxmi1rG_wQHetu7XQFLCiPPHmPNioQsxW3Ejck1Ml3O2yMmxiQ5SbiaGzGm3Z0muB7xsO1kIQujS_3uhnxWoimKZ80pMzVbeyL00JEwqzB_6LMqnDe0jLjRtepn58pgrbMVinTmBgNOLU2g5ZLP5LwGCT9ZHPO5CkO8xWnDBza6sBe1ml46iQwMtomxJX8LCzXsasWyTPwSnuIgWSs2H6bqKU-0OxmNtnvNaiOhSf_BgPb_XESP5Jhd9ox1X5AVwu6b6AHKhzwV51CvOXJ3FIyvg1t5TqUvSk8KfRKu-lZ-NeOILyUblD8lH5b6nRaPv_H2qT2i_YSx1Crfec2jrx5XDqXjXjAfXSsm54SiCrbcoVb-jlopIrMKmrccVDb-FRmZNIztK3TEMPFvizj0ycmUmr5En64CyaJHcuSxxhapiC5V3b8P6nVv6hkTe677VJ_nGiygqGjskAI361XHT-YNMZYSaCaOJ8sXViYF084rqflcIioZ-o5TCuySvg12NRI_OfQUVUuXTmkbWKUvhf6Bf_szwyZbntdyLRTSy-ztdD28I79AkK3I449BhYLf-cyR1VlBUCz_CDu6O0Ao4aDMFZoaL-SQZJgibFCrJW-NozY1S4R7dxuPxTevjIQtjLc-LNiQuCY7vqagmW7zbEJv-1aYcvTHxSzuF-4UB2qftefNixh0xp0Bd-RW8uNfYBCZoX5C899cba11aldCRg7qmNdK8M6I90eAC1oOPo-vzVUy7Waxthhg0-.QMOKVMRbBy-mwRyoPomilQ",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "urn:openid:params:grant-type:ciba",
+							"type": "text"
+						},
+						{
+							"key": "auth_req_id",
+							"value": "eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..MSAm6d9G_4dg90mu2BK6pQ.94MVXHgu8vAlLnlzluZbMmoQygWBzCkFnJ2SU5ai-jyZdxS_Bx8_zbaEvwzCcsaoXj5h8fA9jEsXMCQLCMrprZVkR5TYKo2ceLefF35lydK3R0kuY02q24Az5v5gDe4_QKKpTvoBo94nzpcG0tXaGHr4dPy11ChOxFlGeUtyA5V0Pcd0FqtDzWZhXFiLoRlJfdIVK9zVLGDrE3qlOWLS2nRvI-06w0LfRswKZUedLnM_ATLZfEDOoTTKr_Wb2xGsRLCD0rJBXVsY3poutTMq0-UuZwKoyfxn1rYM5G1HLYKKmzExD4Kee_d-5f_GBAZOjZ8o86spyT4SL43lV8tS6ej7AkhGcImVocBiafXmkFBLATRrJlvArdhSDU2tt2DUFkqHiK7nfEWaV5F3Iukqa-_jFIgE5JUcqGpbtM2J5j8ab49n2L8KnlPNEfdWBu-IAQJIPthNKTJmfR1rGGnOpwkTez9bb3w_7Tv9-K2GmuqqXNPTtMrq_aCwfckdbBNe1DS6TT1ThFrQf8dxMf4x72dXVH2cDlcKPp6yZ-ldcRxJ0FQjJoeNZ8rZqDyvWDX-nNUI4N7a7ax4YgCVvTjrj4XXydyBMP96x75LSHwHgPGR11tiFmSoBpx1C8DLXTPsg4uRTNHesMzBi5d2RCSF96_ZgfQisPlsMLJYt6jceJcQO-cbCqSKDeXK9tchEMLItPumdyrVdC_GFTJQNYcUq3BkuWbxxJpq7UFDbV6l_HZdjXqzg-NsD8WokjKgn11tw8nfhmb4qk-s3c1QVts-K7fedZmRiuCCd11ZZG9vGrARTbHGQZ39gZcc-a5Vi8yRH36SsSxqQx5rm1CJ_Cdq25iNBNn42oLatWjX00Fs6VMcqRf0OirAH1SM3bV20dbgiMMkit9RTlsMef8S03bw8w_fC5-viV5y9O50Ul_FLrTYb4YHMLH5mRpnm6sSMwHA.9G0LlEZcqpg5BFK6HZMjLQ",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "{{client_id}}",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "{{client_secret}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keycloak-host}}/auth/realms/{{realm-name}}/protocol/openid-connect/token",
+					"host": [
+						"{{keycloak-host}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"{{realm-name}}",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Step3",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI1aTluNzhOSHZsVkt4VHpWM21TM0dkSkotQnhEVTluWlBaZVN4ZzN3MFlJIn0.eyJleHAiOjE2MzY0MDcyODQsImp0aSI6IjRhYzFhNzYwLTA0NTYtNGYzNy1hOWM5LTdiNGE3OGFmYzdhNiIsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aC9yZWFsbXMvbWFzdGVyIiwic3ViIjoiNzRhZjg0ZDgtMzZlYy00MTdlLThhODQtYmMzNGE4YzU3MzAxIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoidGVzdCJ9.Tu7FC8fMQPKXjjmnsJCNpzGeBCUxBpbqP4T34LosDTU9sf0g3C8kkNQFeHoPZFztw_z_rY_HM7blnLfBrkPmsM_AdWHLoS6zhV1OrxNVKPsP3nPbaBSUcIHHuRsuywu9Kgn59oNO7SrcZXnYueQYvJmqs3hUkhA3R2nCxpjr4S9dwoWaoQ8BSTU_m3fHqT3HJJ6Ltu6G7Wd-USe1g99I5XrfeucC4m3uPY7PiE-jSh47p7-Gvh9EOuWxgbHK4tmWar8MZg88yxq1qb1HApHR5j0VqUO4n8zTRujSBTAqp_olzkz7nicII_1fp1MVvW2QjEx-A4OFtpp3PGF6gjBd9Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"status\" : \"SUCCEED\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{keycloak-host}}/auth/realms/{{realm-name}}/protocol/openid-connect/ext/ciba/auth/callback",
+					"host": [
+						"{{keycloak-host}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"{{realm-name}}",
+						"protocol",
+						"openid-connect",
+						"ext",
+						"ciba",
+						"auth",
+						"callback"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "keycloak-host",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "realm-name",
+			"value": "master"
+		},
+		{
+			"key": "client_secret",
+			"value": "20bdd86e-53d7-46b2-989a-e3ed77d1c546"
+		},
+		{
+			"key": "client_id",
+			"value": "test"
+		},
+		{
+			"key": "login_hint",
+			"value": "jarvis"
+		}
+	]
+}
